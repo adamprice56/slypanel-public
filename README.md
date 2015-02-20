@@ -14,10 +14,11 @@ Server requirements:
  - SSH server enabled and port forwarded (If required)
  - Root access to the server (Only for lm-sensors installation - Currently not supported)
  
-The application is in early stages, At the moment it can send SSH commands but not get the response. A testing page is being implemented mainly for debugging and checking commands are being sent properly etc. 
+The application is in early stages, At the moment it can send & recieve the correct SSH commands and plot the output on the graphs. These are set commands for gathering CPU usage and RAM usage as a percentage. 
 
 Current status: (Updated 20/02/2015)
   - App retrieves information about CPU and RAM usage with minimal delay (Some minor UI glitches)
-  - No UI blocking from updates, They are all run in AsyncTasks now in parallel
+  - No UI blocking from updates, They are all run in AsyncTasks now in parallel... 
+  - Yaay for Threads! ヽ༼ຈل͜ຈ༽ﾉヽ༼ຈل͜ຈ༽ﾉ
   - New Material design with Material Light theme (Personally... It's awesome ;D)
   - Seems stable... so far... :P
