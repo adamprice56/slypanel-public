@@ -6,7 +6,6 @@ SlyPanel is an app for Android (5.0+) that takes information from Linux computer
 At the moment, external libraries are as follows:
 
  - JSch (For the SSH backend)
-=======
  - AndroidPlot (For the graphs)
  
 Server requirements:
