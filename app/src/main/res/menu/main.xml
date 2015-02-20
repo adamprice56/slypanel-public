@@ -1,0 +1,41 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_example"
+        android:title="@string/action_example"
+        android:showAsAction="withText|ifRoom" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:onClick="showPopup">
+
+        <item
+            android:id="@+id/about"
+            android:title="About"/>
+
+        <item android:id="@+id/graphSelector"
+        android:title="Graphs" >
+        <!-- "Graphs" submenu -->
+        <menu>
+            <group android:checkableBehavior="all">
+                <item android:id="@+id/cpuGraphEnable"
+                    android:title="CPU Graph"
+                    android:checked="true"/>
+            </group>
+            <group android:checkableBehavior="all">
+                <item android:id="@+id/ramGraphEnable"
+                    android:title="RAM Graph"
+                    android:checked="true"/>
+            </group>
+            <group android:checkableBehavior="all">
+                <item android:id="@+id/tempGraphEnable"
+                    android:title="Temp Graph"
+                    android:checked="true"/>
+            </group>
+        </menu>
+
+    </item>
+    </item>
+</menu>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/testing_ssh_layout">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Username: "
+        android:id="@+id/usernameLabel"
+        android:layout_marginTop="42dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Password: "
+        android:id="@+id/passwordLabel"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/usernameLabel"
+        android:layout_alignLeft="@+id/usernameLabel"
+        android:layout_alignStart="@+id/usernameLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Server IP: "
+        android:id="@+id/ipAddrLabel"
+        android:layout_marginTop="38dp"
+        android:layout_below="@+id/passwordLabel"
+        android:layout_alignLeft="@+id/passwordLabel"
+        android:layout_alignStart="@+id/passwordLabel" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/usernameBox"
+        android:layout_alignTop="@+id/usernameLabel"
+        android:layout_toRightOf="@+id/usernameLabel"
+        android:layout_alignRight="@+id/passwordBox"
+        android:layout_alignEnd="@+id/passwordBox"
+        android:hint="Root" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/passwordBox"
+        android:hint="Password"
+        android:layout_above="@+id/ipAddrLabel"
+        android:layout_toRightOf="@+id/passwordLabel"
+        android:layout_toEndOf="@+id/passwordLabel" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ipAddressBox"
+        android:layout_alignBottom="@+id/ipAddrLabel"
+        android:layout_alignLeft="@+id/usernameBox"
+        android:layout_alignStart="@+id/usernameBox"
+        android:layout_alignRight="@+id/passwordBox"
+        android:layout_alignEnd="@+id/passwordBox"
+        android:hint="111.222.333.444" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:id="@+id/sendSettingsButton"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/ipAddrLabel"
+        android:layout_alignStart="@+id/ipAddrLabel"
+        android:layout_alignRight="@+id/ipAddressBox"
+        android:layout_alignEnd="@+id/ipAddressBox"
+        android:onClick="onButtonPress"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Please connect before sending commands."
+        android:id="@+id/statusBarText"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/commandBox"
+        android:layout_below="@+id/sendSettingsButton"
+        android:layout_marginTop="28dp"
+        android:layout_alignLeft="@+id/ipAddressBox"
+        android:layout_alignStart="@+id/ipAddressBox"
+        android:layout_alignRight="@+id/sendSettingsButton"
+        android:layout_alignEnd="@+id/sendSettingsButton"
+        android:hint="e.g. echo Hello | wall"
+        android:text="echo lel | wall" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Command:"
+        android:id="@+id/commandLabel"
+        android:layout_alignBottom="@+id/commandBox"
+        android:layout_alignLeft="@+id/sendSettingsButton"
+        android:layout_alignStart="@+id/sendSettingsButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Command"
+        android:id="@+id/sendCommandButton"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/commandBox"
+        android:layout_alignRight="@+id/commandBox"
+        android:layout_alignEnd="@+id/commandBox"
+        android:onClick="onButtonPress"
+        android:layout_alignLeft="@+id/commandBox"
+        android:layout_alignStart="@+id/commandBox" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connect"
+        android:id="@+id/connectToHostButton"
+        android:layout_alignTop="@+id/sendCommandButton"
+        android:layout_alignLeft="@+id/commandLabel"
+        android:layout_alignStart="@+id/commandLabel"
+        android:layout_toLeftOf="@+id/passwordBox"
+        android:layout_toStartOf="@+id/passwordBox"
+        android:onClick="onButtonPress"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/saveButton"
+        android:layout_above="@+id/statusBarText"
+        android:layout_alignLeft="@+id/connectToHostButton"
+        android:layout_alignStart="@+id/connectToHostButton"
+        android:onClick="onButtonPress"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load"
+        android:id="@+id/loadButton"
+        android:layout_alignTop="@+id/saveButton"
+        android:layout_toRightOf="@+id/saveButton"
+        android:layout_toEndOf="@+id/saveButton"
+        android:onClick="onButtonPress"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SSH Key"
+        android:id="@+id/sshKeyButton"
+        android:layout_above="@+id/statusBarText"
+        android:layout_toRightOf="@+id/loadButton"
+        android:layout_toEndOf="@+id/loadButton"
+        android:onClick="onButtonPress"
+        />
+
+</RelativeLayout>

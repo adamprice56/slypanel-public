@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:theme="@style/AppTheme">
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/Server_Status_Fragment"
+    android:weightSum="1"
+    style="@style/AppTheme"
+    android:baselineAligned="true"
+    android:theme="@style/AppTheme"
+    android:background="@color/background_floating_material_light"
+    android:translationZ="4dp">
+
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardElevation="4dp"
+        android:background="@drawable/myrect"
+        android:theme="@style/AppTheme"
+        android:translationZ="2dp">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridLayoutCpu"
+        android:rowCount="2"
+        android:columnCount="3"
+        android:theme="@style/AppTheme">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="CPU Usage: "
+            android:id="@+id/cpuUsageLabel"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="center|left"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:theme="@style/AppTheme" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/cpuUsageBar"
+            android:max="100"
+            android:progress="25"
+            android:indeterminate="false"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:theme="@style/AppTheme" />
+
+    <com.androidplot.xy.XYPlot
+        android:id="@+id/cpuGraph"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_row="1"
+        android:layout_columnSpan="2"
+        android:layout_column="0"
+        android:theme="@style/AppTheme" />
+    </GridLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view2"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardElevation="4dp"
+        android:background="@drawable/myrect"
+        android:theme="@style/AppTheme"
+        android:translationZ="2dp">
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gridLayoutRam"
+        android:rowCount="2"
+        android:columnCount="3"
+        android:theme="@style/AppTheme">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="RAM Usage: "
+            android:id="@+id/ramUsageLabel"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_gravity="center|left"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:theme="@style/AppTheme" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ramUsageBar"
+            android:max="100"
+            android:progress="45"
+            android:indeterminate="false"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="center"
+            android:theme="@style/AppTheme" />
+
+
+        <com.androidplot.xy.XYPlot
+            android:id="@+id/ramGraph"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_row="1"
+            android:layout_columnSpan="2"
+            android:layout_column="0"
+            android:theme="@style/AppTheme" />
+    </GridLayout>
+
+    </android.support.v7.widget.CardView>
+
+
+
+
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view3"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardElevation="4dp"
+        android:background="@drawable/myrect"
+        android:theme="@style/AppTheme"
+        android:translationZ="2dp">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gridLayoutTemp"
+            android:rowCount="2"
+            android:columnCount="3"
+            android:theme="@style/AppTheme">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Temperature:"
+                android:id="@+id/tempLabel"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="center|left"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/primary_text_default_material_light"
+                android:theme="@style/AppTheme" />
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tempBar"
+                android:max="100"
+                android:progress="60"
+                android:indeterminate="false"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:theme="@style/AppTheme" />
+
+            <com.androidplot.xy.XYPlot
+                android:id="@+id/tempGraph"
+                android:layout_width="fill_parent"
+                android:layout_height="100dp"
+                android:layout_row="1"
+                android:layout_columnSpan="2"
+                android:layout_column="0"
+                android:theme="@style/AppTheme" />
+        </GridLayout>
+
+        </android.support.v7.widget.CardView>
+
+</LinearLayout>
+    </ScrollView>
